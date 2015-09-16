@@ -1,0 +1,10 @@
+沪深日线数据
+http://finance.sina.com.cn/data/#stock
+http://money.finance.sina.com.cn/d/api/openapi_proxy.php/?__s=[[%22hq%22,%22hs_a%22,%22%22,0,1,80]]
+
+z
+http://money.finance.sina.com.cn/d/api/openapi_proxy.php/?__s=[[%22hq%22,%22dpzs%22,%22%22,0,1,40]]&callback=FDC_DC.theTableData
+
+
+http://money.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodeData?page=1&num=3000&sort=symbol&asc=1&node=sz_a&symbol=
+http://money.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodeData?page=1&num=3000&sort=symbol&asc=1&node=sh_a&symbol=
