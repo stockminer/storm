@@ -7,8 +7,6 @@ Created on 2015年6月20日
 #from pandas import Series,DataFrame
 import time
 
-def get_a():
-    return 'a'
 
 def data_frame_to_dict(df):
     index = df.index

@@ -28,33 +28,27 @@ class JobGetStockList(JobBase):
         time.sleep(2)
         sz_a = Client(self.conf.stock_list_url + 'sz_a').gvalue()
         
-        save_to_file(sh_a, self.conf.stock_base_data_file + "-" + time_tag + 'sh_a')
-        save_to_file(sz_a, self.conf.stock_base_data_file + "-" + time_tag + 'sz_a')
-        
-#        stock_codes = df.index
-#        stock_code_file = open(self.conf.stock_code_file + "-" + time_tag, 'w')
-#        for code in stock_codes:
-#            print >>stock_code_file, code
-#        stock_code_file.close()
-#        self.conf.stock_code_list_time_tag = time_tag
-#        tag_file = open(self.conf.stock_base_tagfile, 'w')
-#        print >>tag_file, time_tag
-#        tag_file.close()
+        save_to_file("%s,%s" %(sh_a[:-1], sz_a[1:]), self.conf.stock_base_data_file + "-" + time_tag)
         return StateCode.SUCC
 
-class JobGetStockDeal(JobBase):
-    def __init__(self, conf, code):
+class JobGetConcetiopnStock(JobBase):
+    def __init__(self, conf, conception):
         JobBase.__init__(self, conf, JobLevel.NORMAL)
-        self.code = code
+        self.concep = conception
     def info(self):
-        return 'JobGetStockDeal:%s' %(self.code)
+        return 'JobGetConcetiopnStock:%s' %(self.concep)
     def to_work(self):
-        df = None
-        try:
-            df = ts.get_h_data(self.code)
-        except :
-            print "error:%s" %(self.info())
-            return StateCode.FAIL
-        df.to_json(self.conf.stock_deal_day + "-" + self.code, orient='index')
-        print 'finish %s crawl' %self.code
+        time_tag = get_time_tag()
+        stock_list_json = Client(self.conf.stock_concept_detail_url + self.concep).gvalue()
+        save_to_file(stock_list_json, self.conf.stock_concept_detail_file + "-" + time_tag + '-' + self.concep)
+        return StateCode.SUCC
+    
+class JobGetMoneyFlow(JobBase):
+    def __init__(self, conf):
+        JobBase.__init__(self, conf, JobLevel.NORMAL)
+
+    def to_work(self):
+        time_tag = get_time_tag()
+        money_flow_json = Client(self.conf.stock_money_flow_url).gvalue()
+        save_to_file(money_flow_json, self.conf.stock_money_flow_file + "-" + time_tag)
         return StateCode.SUCC

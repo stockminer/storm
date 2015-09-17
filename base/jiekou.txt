@@ -8,3 +8,11 @@ http://money.finance.sina.com.cn/d/api/openapi_proxy.php/?__s=[[%22hq%22,%22dpzs
 
 http://money.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodeData?page=1&num=3000&sort=symbol&asc=1&node=sz_a&symbol=
 http://money.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodeData?page=1&num=3000&sort=symbol&asc=1&node=sh_a&symbol=
+
+概念列表
+http://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/MoneyFlow.ssl_bkzj_bk?page=1&num=1000&sort=netamount&asc=0&fenlei=1
+概念个股列表
+http://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/MoneyFlow.ssl_bkzj_ssggzj?page=1&num=2000&sort=symbol&asc=1&shichang=&bankuai=1%2Fgn_xtyc
+
+主力散户资金流入流出统计
+http://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/MoneyFlow.ssl_bkzj_ssggzj?page=1&num=3000&sort=symbol&asc=1&bankuai=&shichang=
