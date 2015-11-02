@@ -8,18 +8,19 @@ from base.state_code import StateCode
 
 mylock = threading.RLock()
 class Spider(threading.Thread):
-    def __init__(self, level, id, conf, loger):
+    def __init__(self, level, id, span, conf, loger):
         threading.Thread.__init__(self)
         self.level = level
         self.id = id
+        self.span = span
         self.conf = conf
         self.loger = loger
         self.state = StateCode.SPIDER_OK
         self.job_list = []
     def info(self):
-        return "spider_info:level-id[%d-%d],state[%d]" %(self.level, self.id, self.state)
+        return "spider_info:level-id-span[%d-%d-%d],state[%d]" %(self.level, self.id, self.span, self.state)
     def add_job(self, job):
-        self.loger.debug('spider[%d-%d] add a job:%s' %(self.level, self.id, job.info()))
+        #self.loger.debug('spider[%d-%d] add a job:%s' %(self.level, self.id, job.info()))
         return self.modify_jobs('add', job)
         
     def del_job(self):
@@ -50,7 +51,7 @@ class Spider(threading.Thread):
             if ret != StateCode.SUCC:
                 self.loger.warning('a job fail:%d,spider-info:%s, job-info:%s', ret, self.info(), a_job.info())
             self.del_job()
-            time.sleep(1)
+            time.sleep(self.span)
         if self.state == StateCode.SPIDER_SICK:
             self.loger.warning('spider sick, info:%s', self.info())
     def set_state(self, state):

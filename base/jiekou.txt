@@ -1,4 +1,4 @@
-沪深日线数据
+﻿沪深日线数据
 http://finance.sina.com.cn/data/#stock
 http://money.finance.sina.com.cn/d/api/openapi_proxy.php/?__s=[[%22hq%22,%22hs_a%22,%22%22,0,1,80]]
 
@@ -6,13 +6,43 @@ z
 http://money.finance.sina.com.cn/d/api/openapi_proxy.php/?__s=[[%22hq%22,%22dpzs%22,%22%22,0,1,40]]&callback=FDC_DC.theTableData
 
 
+trade：收盘价
+pricechange 价格变动
+changepercent 涨跌幅
+buy 买一
+sell 卖一
+settlement 昨收
+open 今开
+higt 最高
+low最低
+volume成交量
+amount 金额
+pb市净率
+mktcap总市值
+nmc流通市值
+turnoverratio换手率
 http://money.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodeData?page=1&num=3000&sort=symbol&asc=1&node=sz_a&symbol=
 http://money.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodeData?page=1&num=3000&sort=symbol&asc=1&node=sh_a&symbol=
 
-概念列表
-http://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/MoneyFlow.ssl_bkzj_bk?page=1&num=1000&sort=netamount&asc=0&fenlei=1
-概念个股列表
-http://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/MoneyFlow.ssl_bkzj_ssggzj?page=1&num=2000&sort=symbol&asc=1&shichang=&bankuai=1%2Fgn_xtyc
 
+概念列表
+http://vip.stock.finance.sina.com.cn/mkt/#gn_jrcg
+http://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/MoneyFlow.ssl_bkzj_bk?page=1&num=1000&sort=netamount&asc=0&fenlei=1
+
+行业
+http://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/MoneyFlow.ssl_bkzj_bk?page=1&num=1000&sort=netamount&asc=0&fenlei=0
+行业个股列表
+http://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/MoneyFlow.ssl_bkzj_ssggzj?page=1&num=2000&sort=symbol&asc=1&bankuai=0%2Fnew_ysjs
+
+东方财富概念（更准一些）
+http://data.eastmoney.com/bkzj/gn.html
+http://nufm.dfcfw.com/EM_Finance2014NumericApplication/JS.aspx?type=CT&cmd=C._BKGN&sty=DCFFPBFM&st=(BalFlowMain)&sr=-1&p=1&ps=10000&js=&token=894050c76af8597a853f5b408b759f5d
+概念详细
+http://nufm.dfcfw.com/EM_Finance2014NumericApplication/JS.aspx?type=ct&st=(Code)&sr=-1&p=1&ps=2000&sty=DCFFITA&token=894050c76af8597a853f5b408b759f5d&cmd=C.BK05961
 主力散户资金流入流出统计
 http://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/MoneyFlow.ssl_bkzj_ssggzj?page=1&num=3000&sort=symbol&asc=1&bankuai=&shichang=
+
+股东人数变化 特色数据中
+http://data.eastmoney.com/cmjzd/
+沪股通资金流向
+http://datainterface.eastmoney.com/EM_DataCenter/JS.aspx?type=SHT&sty=SHTHPS&mkt=1
