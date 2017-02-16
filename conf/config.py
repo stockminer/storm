@@ -20,8 +20,8 @@ class RootConf:
         self.user = user
         self.confs = {}
         self.confs['yafei'] = {}
-        self.confs['yafei']['bin_root'] = '/home/users/miaoyafei/project/gold-mine'
-        self.confs['yafei']['data_root'] = '/home/users/miaoyafei/project/data'
+        self.confs['yafei']['bin_root'] = '/home/users/db/project/gold-mine'
+        self.confs['yafei']['data_root'] = '/home/users/db/project/data'
         
         self.confs['yafei-pc'] = {}
         self.confs['yafei-pc']['bin_root'] = 'Z:/project/gold-mine'
@@ -110,7 +110,7 @@ class Config:
         self.db_host = '127.0.0.1'
         self.db_port = 11198
         self.db_user = 'root'
-        self.db_pwd = 'rankfresh!!!'
+        self.db_pwd = '****'
         self.db_name = 'stock'
         self.db_charset = 'utf8'
 
